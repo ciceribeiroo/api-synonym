@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-from Model.word import word_class
+from models.word import word_class
 
 url = "https://www.sinonimos.com.br/"
 

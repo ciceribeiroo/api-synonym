@@ -1,7 +1,7 @@
 from flask import request, jsonify, Flask
 
-import Utils.utils as utils
-import Repository.mongo as mongo
+import utils.web_scrapping as web_scrapping
+import repositories.mongo as mongo
 
 app = Flask(__name__)
 
@@ -12,7 +12,7 @@ def api_id():
         db_word = mongo.find(word)
         print(db_word)
         if db_word is None:
-            res = utils.get_synonyms(word)
+            res = web_scrapping.get_synonyms(word)
             if res is not None:
                 mongo.add(res)
                 result = res.__dict__
