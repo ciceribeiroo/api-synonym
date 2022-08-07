@@ -26,5 +26,9 @@ def api_id():
     else:
         return "Error: No word field provided. Please specify an word."
 
+@app.route('/')
+def home():
+    return "Please insert a word"
+    
 app.run()
 
