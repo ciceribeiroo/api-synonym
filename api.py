@@ -19,7 +19,7 @@ def api_id():
                 result["_id"] = str(result["_id"])
                 return jsonify(result)
             else:
-                return "The word was not found. Please check the spelling"
+                return "Error: The word was not found. Please check the spelling"
         else:
             db_word["_id"] = str(db_word['_id'])
             return db_word
