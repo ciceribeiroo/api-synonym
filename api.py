@@ -30,5 +30,6 @@ def api_id():
 def home():
     return "Please insert a word"
 
-app.run(host='0.0.0.0', port=8656)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8656)
 
