@@ -1,1 +1,1 @@
-web: gunicorn api-synonyms:app
+web: gunicorn api:app
