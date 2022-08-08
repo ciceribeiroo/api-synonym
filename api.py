@@ -29,6 +29,6 @@ def api_id():
 @app.route('/')
 def home():
     return "Please insert a word"
-    
-app.run()
+
+app.run(port=8000)
 
