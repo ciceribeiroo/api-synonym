@@ -21,7 +21,7 @@ def api_id():
                 response.headers.add('Access-Control-Allow-Origin', '*')
                 return response
             else:
-                response = jsonify("Error: The word was not found. Please check the spelling")
+                response = jsonify("A palavra não foi encontrada. Por favor, cheque a soletração e tente novamente")
                 response.headers.add('Access-Control-Allow-Origin', '*')
                 return response
         else:
