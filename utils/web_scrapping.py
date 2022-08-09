@@ -23,13 +23,14 @@ def find_syn(soup):
         print(len(span), "Exemplo" not in span[2].text)
         syns_el = [el for el in span if "Exemplo" not in el.text]
       syns_text = [el.text for el in syns_el]
-      meaning_el = i.find(class_="sentido") 
+      syns_list.append(syns_text)
+      #meaning_el = i.find(class_="sentido") 
       # if elements with sentido class doesn't exist, the element doesn't exist
-      if meaning_el is not None:
-        meaning = meaning_el.text.replace(":", "")
-        number = i.find(class_="number").text
-        syns_list.append([number, meaning, syns_text])
-      else:
-        number = i.find(class_="number").text
-        syns_list.append([number, syns_text])
+      # if meaning_el is not None:
+      #   meaning = meaning_el.text.replace(":", "")
+      #   number = i.find(class_="number").text
+      #   syns_list.append([number, meaning, syns_text])
+      # else:
+      #   number = i.find(class_="number").text
+      #   syns_list.append([number, syns_text])
     return syns_list
