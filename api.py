@@ -17,12 +17,16 @@ def api_id():
                 mongo.add(res)
                 result = res.__dict__
                 result["_id"] = str(result["_id"])
-                return jsonify(result)
+                response = jsonify(result)
+                response.headers.add('Access-Control-Allow-Origin', '*')
+                return response
             else:
                 return "Error: The word was not found. Please check the spelling"
         else:
             db_word["_id"] = str(db_word['_id'])
-            return db_word
+            response = jsonify(db_word)
+            response.headers.add('Access-Control-Allow-Origin', '*')
+            return response
     else:
         return "Error: No word field provided. Please specify an word."
 
