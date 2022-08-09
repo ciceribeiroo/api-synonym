@@ -21,14 +21,18 @@ def api_id():
                 response.headers.add('Access-Control-Allow-Origin', '*')
                 return response
             else:
-                return "Error: The word was not found. Please check the spelling"
+                response = jsonify("Error: The word was not found. Please check the spelling")
+                response.headers.add('Access-Control-Allow-Origin', '*')
+                return response
         else:
             db_word["_id"] = str(db_word['_id'])
             response = jsonify(db_word)
             response.headers.add('Access-Control-Allow-Origin', '*')
             return response
     else:
-        return "Error: No word field provided. Please specify an word."
+        response = jsonify("Error: No word field provided. Please specify an word.")
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return response
 
 @app.route('/')
 def home():
