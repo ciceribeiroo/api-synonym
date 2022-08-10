@@ -20,7 +20,6 @@ def find_syn(soup):
       # if elements with sinonimo class does't exist, look for span elements that aren't the example one
       if len(syns_el)==0:
         span = i.findAll("span")
-        print(len(span), "Exemplo" not in span[2].text)
         syns_el = [el for el in span if "Exemplo" not in el.text]
       syns_text = [el.text for el in syns_el]
       syns_list.append(syns_text)
